@@ -5,6 +5,8 @@ The Solution to help Developing &amp; Debugging as C &amp; Deploying in Shellcod
 Visual Studio 2026 is the only IDE could be used to compile the solution (as slnx not compatible with older version), hardware & software requirements same as Visual Studio 2026.
 For allowing ShellcodeTestLoader to be executed on Windows XP x86/x64 version, v140xp or v141xp toolsets (though deprecated) should be installed in addtion to the C Desktop Development Core Components.
 
+However, for those who prefer older version of MsDev environment, sln could still be converted using "Save as" after opening MsShellcodeDev project using VS2026. After doing so, remember to change configuration to allow compiling. BTW, the projects are compatible to VS 2015 & newer version. (Not trying older version, might work on VS 2012/2013 but lazy to try)
+
 # Requirement - To Build the Shellcode
 To execute "Vcxproj to Shellcode Compiler" to convert & compile the vcxproj to shellcode, Windows 7 & Visual Studio 2015 (or higher version OSes/IDEs) are required, so the Software/Hardwre requirements just same as Win 7 & VS 2015. The converted project should be developed using pure C & win32/win64 APIs without class & global variable definitions.
 
