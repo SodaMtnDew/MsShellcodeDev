@@ -15,3 +15,8 @@ Both "ShellcodePrototype" & "ShellcodeSample" are programs could be compiled & e
 
 # Additional Info
 To test the compiled shellcode on windows 2000, be noticed that Visual Studio 2008 was "officially" the last version of MS IDE supporting Windows 2000, please find the Express version of it to install, then migrate "ShellcodeTestLoader" to VS2008 with "careful" modification, and after the successful built, a Windows 2000 compatible Shellcode Test Loader will be there.
+
+# Pros Compared to Other Solutions
+1. Auto Converting, Compiling & Extracting: No need to assign string variable as local char array manually, & using dword to save local array variables could help preventing SIMD instruction extension from being used (in the case, array data will be put into data section); no need to calculate api hashes for converter will do it for you.
+2. Supporting Getting API by Ordinal: Some undocumented APIs were provided very early (NT 5.0 or even 4.0) but in older version of DLLs, exported by ordinal (Thos ordinals not changed bacause of backward compatibility). If want the shellcode compitible from NT5.0 to NT10.0, try to find those APIs & use them well (Please Google Geoff Chappel for the references he provided)
+3. Supporting API forwarding: Using "dumpbin /exports" on DLLs of different versions of Windows, API forwarding could be easily found on many legacy API/DLL pairs. MsShellcodeDev could detect if API forwarding happened in loaded DLL and get the real function address from the forwarded DLL. (Just figured out, even in kernel32.dll & user32.dll, API forwarding was implemented on Windows 11 25H2 (not trying other version, but my ShellcodeSample included APIs from netapi32.dll that forwarded to other DLLs.
