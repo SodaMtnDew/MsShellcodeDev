@@ -4,6 +4,7 @@ The Solution to help Developing &amp; Debugging as C &amp; Deploying in Shellcod
 # Requirement - To Build the Solution
 Main part: MsShellcodeDev -- Visual Studio 2026 is the recommended IDE to compile the solution, however, as sln provided, using VS2015, 2017, 2019 & 2022 to build this project is possible, just remember to modify some important settings such as platform toolset and others. Hardware & software requirements are the same as used Visual Studio Version.
 For allowing ShellcodeTestLoader to be executed on Windows XP x86/x64 version, v140xp or v141xp toolsets (though deprecated) should be installed in addtion to the C Desktop Development Core Components.
+
 Additional tool part: MsShellcodeDev-TestLoader -- Visual Studio 2008 Express with SP1 was used to build this project since windows 2000 compatibility is considered. Converted shellcode could be successfully tested using compiled ShellcodeTestLoader from Windows 2000 to Windows 11 platforms. 
 
 # Requirement - To Build the Shellcode
