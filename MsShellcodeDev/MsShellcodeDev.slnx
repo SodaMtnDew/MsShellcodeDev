@@ -14,6 +14,9 @@
   <Project Path="ShellcodeSample/ShellcodeSample.vcxproj" Id="3e3e4210-add5-4c73-aa95-9dbaf3cc75a7" />
     <BuildType Project="Release" />
     <Build Solution="Debug|*" Project="false" />
+  <Project Path="ShellcodeTestLoader/ShellcodeTestLoader.vcxproj" Id="79142c14-8978-480a-a0cf-603fc62fef59">
+    <BuildType Project="Release" />
+  </Project>
   <Project Path="VcxprojToShellcodeCompiler/VcxprojToShellcodeCompiler.vcxproj" Id="9bd584ee-4bd0-493a-a3dc-bc6e5d5fd4b4">
     <Platform Project="Win32" />
     <Build Solution="*|x64" Project="false" />
