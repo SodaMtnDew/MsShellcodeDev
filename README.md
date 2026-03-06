@@ -19,25 +19,25 @@ Both "ShellcodePrototype" & "ShellcodeSample" are programs could be compiled & e
 3. Supporting API Forwarding: Using "dumpbin /exports" on DLLs of different versions of Windows, API forwarding could be easily found on many legacy API/DLL pairs. MsShellcodeDev could detect if API forwarding happened in loaded DLL and get the real function address from the forwarded DLL. (FYI, even in kernel32.dll & user32.dll, those frequently used dll, API forwarding was implemented on Windows 11 25H2, & I'm not trying other versions) Using "ShellcodeSample" of "MsShellcodeDev," since the source code included APIs from netapi32.dll that forwarded to other DLLs & APIs from shlwapi.dll that exported using ordinals, Feature 2 & 3 could be tested using one sample.
 
 # Output of Sample Shellcode
-1. Windows 2000 Professional SP4
+1. Windows 2000 Professional SP4<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win2k.Pro.png)
-3. Windows XP Professional SP3
+3. Windows XP Professional SP3<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.WinXP.x86.Pro.png)
-4. Windows XP Professional x64 SP2
+4. Windows XP Professional x64 SP2<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.WinXP.x64.Pro.png)
-5. Windows 7 Ultimate x86
+5. Windows 7 Ultimate x86<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win7.x86.Ult.png)
-6. Windows 7 Ultimate x64
+6. Windows 7 Ultimate x64<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win7.x64.Ult.png)
-7. Windows 10 Pro x86
+7. Windows 10 Pro x86<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win10.x86.Pro.png)
-8. Windows 10 Pro x64
+8. Windows 10 Pro x64<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win10.x64.Pro.png)
-9. Windows 11 Pro
+9. Windows 11 Pro<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win11.Pro.png)
-10. Windows Server 2025 as Domain Controller
+10. Windows Server 2025 as Domain Controller<br />
     ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win2025.DomainCenter.Std.png)
-11. Windows Server 2022 as Domain Member
+11. Windows Server 2022 as Domain Member<br />
     ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win2022.Domain.Std.png)
-12. Windows 11 Pro as Domain Member
+12. Windows 11 Pro as Domain Member<br />
     ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win11.Domain.Pro.png)
