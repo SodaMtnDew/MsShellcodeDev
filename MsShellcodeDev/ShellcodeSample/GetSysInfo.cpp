@@ -35,13 +35,20 @@ LPWSTR GetSysInfo(HANDLE hHeap)
 	/*/advapi32.dll/*/GetUserNameW(pwszStr, &dwBufLen);
 	/*/shlwapi.dll#212/*/IStream_Write(pStream, L"\r\nUser Name: ", 26);
 	/*/shlwapi.dll#212/*/IStream_Write(pStream, pwszStr, dwBufLen * sizeof(WCHAR) - 2);
-	/*/kernel32.dll/*/GetSystemWindowsDirectoryW(pwszStr, MAX_PATH);
+	pwszRet = pwszStr + /*/kernel32.dll/*/GetSystemWindowsDirectoryW(pwszStr, MAX_PATH);
 	/*/shlwapi.dll#212/*/IStream_Write(pStream, L"\r\nOS Arch: ", 22);
-	/*/kernel32.dll/*/lstrcatW(pwszStr, L"\\SysWOW64");
+	/*/kernel32.dll/*/lstrcpyW(pwszRet, L"\\SyChpe32"); 
 	if(/*/shlwapi.dll/*/PathFileExistsW(pwszStr))
-		/*/shlwapi.dll#212/*/IStream_Write(pStream, L"x64", 6);
+		/*/shlwapi.dll#212/*/IStream_Write(pStream, L"arm64", 10);
 	else
-		/*/shlwapi.dll#212/*/IStream_Write(pStream, L"x86", 6);
+	{
+		/*/kernel32.dll/*/lstrcpyW(pwszRet, L"\\SysWOW64");
+		if (/*/shlwapi.dll/*/PathFileExistsW(pwszStr))
+			/*/shlwapi.dll#212/*/IStream_Write(pStream, L"x64", 6);
+		else
+			/*/shlwapi.dll#212/*/IStream_Write(pStream, L"x86", 6);
+	}
+	pwszRet = NULL;
 	OSVERSIONINFOEXW osVerInfo;
 	osVerInfo.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEXW);
 	/*/kernel32.dll/*/GetVersionExW((LPOSVERSIONINFOW)&osVerInfo);
@@ -83,4 +90,5 @@ LPWSTR GetSysInfo(HANDLE hHeap)
 	/*/shlwapi.dll#184/*/IStream_Read(pStream, pwszRet, uiSize.LowPart);
 	/*/shlwapi.dll#169/*/IUnknown_AtomicRelease((LPVOID*)&pStream);
 	return pwszRet;
+
 }
