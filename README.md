@@ -41,5 +41,5 @@ Both "ShellcodePrototype" & "ShellcodeSample" are programs could be compiled & e
     ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win2022.Domain.Std.png)
 12. Windows 11 Pro as Domain Member<br />
     ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win11.Domain.Pro.png)
-13. Windows 11 on Arm64<br />    
+13. Windows 11 Pro on Arm64<br />    
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win11.Arm64.Pro.png)
