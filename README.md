@@ -18,6 +18,9 @@ Both "ShellcodePrototype" & "ShellcodeSample" are programs could be compiled & e
 2. Supporting Getting API by Ordinal: Some undocumented APIs were provided very early (NT 5.0 or even 4.0) but in older version of DLLs, exported by ordinal (Those ordinals are unchanged bacause of backward compatibility). If want to develop the shellcode compitible for all NT-based platform, try to find those APIs & use them well (You could Google "Geoff Chappel" for the references he provided)
 3. Supporting API Forwarding: Using "dumpbin /exports" on DLLs of different versions of Windows, API forwarding could be easily found on many legacy API/DLL pairs. MsShellcodeDev could detect if API forwarding happened in loaded DLL and get the real function address from the forwarded DLL. (FYI, even in kernel32.dll & user32.dll, those frequently used dll, API forwarding was implemented on Windows 11 25H2, & I'm not trying other versions) Using "ShellcodeSample" of "MsShellcodeDev," since the source code included APIs from netapi32.dll that forwarded to other DLLs & APIs from shlwapi.dll that exported using ordinals, Feature 2 & 3 could be tested using one sample.
 
+# Additional Info
+Comments of codes not provide in most cpp/h files, would be added to help people get the ideas of how this solution works.
+
 # Output of Sample Shellcode
 1. Windows 2000 Professional SP4<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win2k.Pro.png)
