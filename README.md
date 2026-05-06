@@ -1,5 +1,5 @@
 # MsShellcodeDev
-The toolset that could help turning as C programmers to Shellcode developers.
+The toolset that could help turning C programmers to Shellcode developers.
 
 # Requirements - To Build the Solution
 Main part: MsShellcodeDev -- Visual Studio 2026 (all versions) is the recommended IDE to compile the solution, however, as sln provided, using VS2015, 2017, 2019 & 2022 to build this project is possible, just remember to modify some important settings such as platform toolset and others. Hardware & software requirements are the same as used Visual Studio Version. (For those want to develop offline under a not-so-fat IDE, Visual Studio 2015 might be your best choice.) 
