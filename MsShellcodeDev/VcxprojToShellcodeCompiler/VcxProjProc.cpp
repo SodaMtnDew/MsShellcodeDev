@@ -301,7 +301,13 @@ VOID ExportVcxproj(HANDLE hHeap, PPROP_VCXPROJ pProp_VcxProj, DWORD dwVerEnvEnv,
 	CHAR pszTsVerPrj[2][5];
 	BOOL bNeedSDK = dwVerEnvEnv > 14 ? TRUE : FALSE;
 	wsprintfA(pszTsVerPrj[0], "%d.0", dwVerEnvEnv);
-	wsprintfA(pszTsVerPrj[1], "v14%c", (CHAR)((dwVerEnvEnv < 18 ? '0' : '1') + (dwVerEnvEnv - 14)));
+	wsprintfA(pszTsVerPrj[1], "v%d0", dwVerEnvEnv < 14 ? dwVerEnvEnv : 14);
+	if (dwVerEnvEnv > 14)
+	{
+		pszTsVerPrj[1][3] += (dwVerEnvEnv - 14);
+		if (dwVerEnvEnv == 18)
+			pszTsVerPrj[1][3] += 1;
+	}
 	DWORD dwSize;
 	LPSTR pszNow, pszToken, pszScanned, pszTail;
 	PFILE2ADD pFileNow;

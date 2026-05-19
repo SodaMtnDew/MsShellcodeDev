@@ -28,20 +28,25 @@ DWORD GetVcVars32Path(HANDLE hHeap, LPBOOL pbNeedSDK, LPDWORD pdwVerMsDev,  LPWS
 			*pdwVerMsDev = GetFileProperties(hHeap, pwszPath, ppwszMsDev);
 			if (*pdwVerMsDev)
 			{
-				if (*pdwVerMsDev > 14)
-					*pbNeedSDK = TRUE;
+				if (*pdwVerMsDev <= 11)
+					dwRet = ERSC_OLDMSDEV;
 				else
-					*pbNeedSDK = FALSE;
-				lstrcpyW(StrRStrIW(pwszPath, NULL, L"Common7"), L"VC\\");
-				lstrcatW(pwszPath, *pbNeedSDK ? L"Auxiliary\\Build\\vcvars32.bat" : L"bin\\vcvars32.bat");
-				if (PathFileExistsW(pwszPath))
 				{
-					dwSize = lstrlenW(pwszPath) * sizeof(WCHAR) + 2;
-					*ppwszVcBat = (LPWSTR)HeapAlloc(hHeap, HEAP_ZERO_MEMORY, dwSize);
-					lstrcpyW(*ppwszVcBat, pwszPath);
+					if (*pdwVerMsDev > 14)
+						*pbNeedSDK = TRUE;
+					else
+						*pbNeedSDK = FALSE;
+					lstrcpyW(StrRStrIW(pwszPath, NULL, L"Common7"), L"VC\\");
+					lstrcatW(pwszPath, *pbNeedSDK ? L"Auxiliary\\Build\\vcvars32.bat" : L"bin\\vcvars32.bat");
+					if (PathFileExistsW(pwszPath))
+					{
+						dwSize = lstrlenW(pwszPath) * sizeof(WCHAR) + 2;
+						*ppwszVcBat = (LPWSTR)HeapAlloc(hHeap, HEAP_ZERO_MEMORY, dwSize);
+						lstrcpyW(*ppwszVcBat, pwszPath);
+					}
+					else
+						dwRet = ERSC_NOMSVC;
 				}
-				else
-					dwRet = ERSC_NOMSVC;
 			}
 			else
 				dwRet = ERSC_OLDMSDEV;
@@ -129,20 +134,15 @@ DWORD GetFileProperties(HANDLE hHeap, LPWSTR pwszPath, LPWSTR * ppwszMsDev)
 		if (!FAILED(hr))
 		{
 			dwVerRet = (DWORD)StrToIntW(pValueVersion.m_pData);
-			if (dwVerRet < 14)
-				dwVerRet = 0;
-			else
+			hr = pItem->GetString(PKEY_FileDescription, &pValueDesc);
+			if (!FAILED(hr))
 			{
-				hr = pItem->GetString(PKEY_FileDescription, &pValueDesc);
-				if (!FAILED(hr))
-				{
-					*ppwszMsDev = (LPWSTR)HeapAlloc(hHeap, HEAP_ZERO_MEMORY, (lstrlenW(pValueDesc.m_pData) + lstrlenW(pValueVersion.m_pData) + 4) * 2);
-					wsprintfW(*ppwszMsDev, L"%s (%s)", pValueDesc.m_pData, pValueVersion.m_pData);
-					pValueDesc.Free();
-				}
-				else
-					dwVerRet = 0;
+				*ppwszMsDev = (LPWSTR)HeapAlloc(hHeap, HEAP_ZERO_MEMORY, (lstrlenW(pValueDesc.m_pData) + lstrlenW(pValueVersion.m_pData) + 4) * 2);
+				wsprintfW(*ppwszMsDev, L"%s (%s)", pValueDesc.m_pData, pValueVersion.m_pData);
+				pValueDesc.Free();
 			}
+			else
+				dwVerRet = 0;
 			pValueVersion.Free();
 		}
 		pItem.Release();
