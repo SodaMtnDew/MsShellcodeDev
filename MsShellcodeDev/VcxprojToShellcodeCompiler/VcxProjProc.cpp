@@ -304,7 +304,7 @@ VOID ExportVcxproj(HANDLE hHeap, PPROP_VCXPROJ pProp_VcxProj, DWORD dwVerEnvEnv,
 	wsprintfA(pszTsVerPrj[1], "v%d0", dwVerEnvEnv < 14 ? dwVerEnvEnv : 14);
 	if (dwVerEnvEnv > 14)
 	{
-		pszTsVerPrj[1][3] += (dwVerEnvEnv - 14);
+		pszTsVerPrj[1][3] += (CHAR)(dwVerEnvEnv - 14);
 		if (dwVerEnvEnv == 18)
 			pszTsVerPrj[1][3] += 1;
 	}
