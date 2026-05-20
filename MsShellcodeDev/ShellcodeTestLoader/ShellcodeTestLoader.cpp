@@ -26,6 +26,7 @@ int APIENTRY winMain()
 		VirtualFree(pFnSC, dwSize, MEM_RELEASE);
 		HeapFree(hHeap, 0, pwszSc2Exec);
 	}
+	ExitProcess(0);
 	return 0;
 }
 
