@@ -46,7 +46,7 @@ Both "ShellcodePrototype" & "ShellcodeSample" are programs could be compiled & e
 Comments of codes not provide in most cpp/h files, would be added to help people get the ideas of how this solution works.
 
 # Output of Sample Shellcode
-1. Demonstration Video showing the result of executing generated x86 shellcode on Windows 2000 Prosessional with SP4 (Weird behavior observed that 1st time shellcode execution has a "too" big message box shown, 2nd time becomes normal, try if you have win2k<br />
+1. Demonstration Video showing the result of executing generated x86 shellcode on Windows 2000 Prosessional with SP4 (Weird behavior observed that 1st time shellcode execution has a "too" big message box shown, 2nd time becomes normal, try if you have win2k)<br />
    [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win2k.Pro.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/RunShellcode@Win2kPro.mp4)
 2. Demonstration Video showing the result of executing generated x86 & x64 shellcode on Windows XP Professional x64 Edition with SP2<br />
    [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.WinXP.x64.Pro.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/RunShellcode@XPx64.mp4)
