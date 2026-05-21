@@ -5,7 +5,13 @@ The toolset that could help turning C programmers to Shellcode developers.
 Main part: MsShellcodeDev -- Visual Studio 2026 (all versions) is the recommended IDE to compile the solution, however, as sln provided, using Visual Studio 2013, 2015, 2017, 2019 & 2022 to build this project is possible, just remember to modify some important settings such as platform toolset and others. Hardware & software requirements are the same as used Visual Studio Version. (For those want to develop offline under a not-so-fat IDE, Visual Studio 2015 might be your best choice.) 
 For allowing ShellcodeTestLoader to be executed on Windows XP x86/x64 version, v140xp or v141xp toolsets (though deprecated) should be installed in addtion to the C Desktop Development Core Components if using Visual Studio 2017 or newer version.
 
+Demonstration Video showing project "VcxprojToShellcodeCompiler" & "ShellcodeTestLoader" of MsShellcodeDev built using Visual Studio 2026
+[![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/MsShellcodeDev-Built.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/MsShellcodeDev-Built.mp4)
+
 Additional tool part: ShellcodeTestLoader.x86 -- The "ShellcodeTestLoader" has another copy of sln that should be built using Visual Studio 2008 Express with SP1 since windows 2000 compatibility is considered. VS2008 is the last version supporting windows 2000. Although it's also the first or second version supporting x64, the free "Visual Studio 2008 Express" version did not have a built-in x64 compiler (but not a problem since Windows 2000 did not have x64 version). The compiled ShellcodeTestLoader could be used to load & test x86 shellcode from Windows 2000 to Windows 11 platforms. 
+
+Demonstration Video showing project "ShellcodeTestLoader.x86" built using Visual Studio 2008 Express
+[![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/ShellcodeTestLoader.x86-Built.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/ShellcodeTestLoader.x86-Built.mp4)
 
 # Requirements - To Build the Shellcode
 To execute "Vcxproj to Shellcode Compiler" to convert & compile the vcxproj to shellcode, Windows 7 & Visual Studio 2013 (or higher version OSes/IDEs) are required, so the Software/Hardwre requirements just same as Win 7 & VS 2013. The converted project should be developed using pure C & win32/win64 APIs without class & global variable definitions.
