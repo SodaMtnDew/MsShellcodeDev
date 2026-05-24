@@ -5,6 +5,8 @@ The toolset that could help turning C programmers to Shellcode developers.
 Main part: MsShellcodeDev -- Visual Studio 2026 (all versions) is the recommended IDE to compile the solution, however, as sln provided, using Visual Studio 2013, 2015, 2017, 2019 & 2022 to build this project is possible, just remember to modify some important settings such as platform toolset and others. Hardware & software requirements are the same as used Visual Studio Version. (For those want to develop offline under a not-so-fat IDE, Visual Studio 2015 might be your best choice.) 
 For allowing ShellcodeTestLoader to be executed on Windows XP x86/x64 version, v140xp or v141xp toolsets (though deprecated) should be installed in addtion to the C Desktop Development Core Components if using Visual Studio 2017 or newer version.
 
+(For Demonstration Video: Click on the Image & Download the MP4 to play)
+
 Demonstration Video showing project "VcxprojToShellcodeCompiler" (the core part) & "ShellcodeTestLoader" (the tester) of MsShellcodeDev built using Visual Studio 2026<br />
 [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/MsShellcodeDev-Built.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/MsShellcodeDev-Built.mp4)
 
