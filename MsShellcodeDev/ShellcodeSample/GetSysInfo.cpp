@@ -35,6 +35,10 @@ LPWSTR GetSysInfo(HANDLE hHeap)
 	/*/advapi32.dll/*/GetUserNameW(pwszStr, &dwBufLen);
 	/*/shlwapi.dll#212/*/IStream_Write(pStream, L"\r\nUser Name: ", 26);
 	/*/shlwapi.dll#212/*/IStream_Write(pStream, pwszStr, dwBufLen * sizeof(WCHAR) - 2);
+	UINT codePage = /*/kernel32.dll/*/GetACP();
+	/*/user32.dll/*/wsprintfW(pwszStr, L"\r\nCodepage: %d", codePage);
+	dwBufLen = /*/kernel32.dll/*/lstrlenW(pwszStr);
+	/*/shlwapi.dll#212/*/IStream_Write(pStream, pwszStr, dwBufLen * sizeof(WCHAR));
 	pwszRet = pwszStr + /*/kernel32.dll/*/GetSystemWindowsDirectoryW(pwszStr, MAX_PATH);
 	/*/shlwapi.dll#212/*/IStream_Write(pStream, L"\r\nOS Arch: ", 22);
 	/*/kernel32.dll/*/lstrcpyW(pwszRet, L"\\SyChpe32"); 
@@ -90,5 +94,4 @@ LPWSTR GetSysInfo(HANDLE hHeap)
 	/*/shlwapi.dll#184/*/IStream_Read(pStream, pwszRet, uiSize.LowPart);
 	/*/shlwapi.dll#169/*/IUnknown_AtomicRelease((LPVOID*)&pStream);
 	return pwszRet;
-
 }
