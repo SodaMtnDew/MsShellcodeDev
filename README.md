@@ -49,17 +49,14 @@ For the project to be converted & compiled, developers could type the codes & de
 # Additional Info
 Comments of codes not provide in most cpp/h files, would be added to help people get the ideas of how this solution works.
 
-# Output of Sample Shellcode
-1. Demonstration Video showing the result of executing generated x86 shellcode on Windows 2000 Prosessional with SP4 (Weird behavior observed that 1st time shellcode execution has a "too" big message box shown, 2nd time becomes normal, try if you have win2k)<br />
+# List of Demonstration MP4 Files
+1. Executing Patched Poison Ivy 2.3.2 Shellcode on Windows 11 26H1, C2 Listening on Port 3460 at Windows Server 2025 Standard Version<br />
    [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win2k.Pro.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/RunShellcode@Win2kPro.mp4)
-2. Demonstration Video showing the result of executing generated x86 & x64 shellcode on Windows XP Professional x64 Edition with SP2<br />
+2. Compiling ShellcodeSample, Output as GetSysInfo & Executing Both x86/x64 Versions on Windows 2000 Professional, Windows XP, etc. (Including Windows 11)<br />
    [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.WinXP.x64.Pro.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/RunShellcode@XPx64.mp4)
-3. Popup message box displayed on different Windows Versions<br /><br />
-   Windows Server 2025 as Domain Controller<br />
-   ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win2025.DomainCenter.Std.png)<br /><br />
-   Windows Server 2022 as Domain Member<br />
-   ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win2022.Domain.Std.png)<br /><br />
-   Windows 11 Pro as Domain Member<br />
+3. Building PoC_Reconnaissance, Compiling ReconAgent as Shellcode & Executing It on Windows XP, Windows 7, Windows 10 CMGE, Windows 11 26H1 zhTW & Windows 11 26H1 enUS, With Different Office Version & PDF Viewer Installed<br />
+   ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win2025.DomainCenter.Std.png)
+4. Building PoC_Licensing@USB, Compiling CheckLicense as Shellcode & Executing It on Windows 11 26H1 enUS, With Same License.ini File on Different USB Thumbdrive<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win11.Domain.Pro.png)<br /><br />
-   Windows 11 Pro on Arm64<br />
+5. Popup MessageBox (Screenshot Only) Displayed Afetr Executing GetSysInfo Shellcode File on Windows 11 Pro on Arm64<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win11.Arm64.Pro.png)
