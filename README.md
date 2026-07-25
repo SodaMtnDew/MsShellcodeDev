@@ -16,6 +16,8 @@ PoC part 1: Poc_Reconnaissance -- The "ReconCommand" is the C2 that Received Sys
 
 PoC part 2: Poc_Licensing@USB -- Under Developing... Using HMAC_SHA512 & iSN of USB Thumbdrive
 
+P.S. For C2 in PoC, Remember to Set Firewall Rules for C2 Host ...
+
 Demonstration Video showing project "ShellcodeTestLoader.x86" built using Visual Studio 2008 Express<br />
 [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/ShellcodeTestLoader.x86-Built.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/ShellcodeTestLoader.x86-Built@VS2008Express.mp4)
 
