@@ -56,7 +56,7 @@ For the project to be converted & compiled, developers could type the codes & de
 Comments of codes not provide in most cpp/h files, would be added to help people get the ideas of how this solution works.
 
 # List of Demonstration MP4 Files
-1. Executing Patched Poison Ivy 2.3.2 Shellcode on Windows 11 26H1, C2 Listening on Port 3460 at Windows Server 2025 Standard Version, This Demo Means how MsShellcodeDev Emerged as an Open Source Project<br />
+1. Executing Patched Poison Ivy 2.3.2 Shellcode on Windows 11 26H1, C2 Listening on Port 3460 at Windows Server 2025 Standard Version, Just to Mention How MsShellcodeDev Emerged as an Open Source Project (From Patching Poison Ivy RAT)<br />
    [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/PatchedPI232@Win11.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/PatchedPI232@Win11.mp4)
 2. Compiling ShellcodeSample, Output as GetSysInfo & Executing Both x86/x64 Versions on Windows 2000 Professional, Windows XP, etc. (Including Windows 11)<br />
    [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/GetSysInfo@Windows.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/GetSysInfo@Windows.mp4)
