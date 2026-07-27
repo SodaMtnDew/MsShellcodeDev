@@ -12,9 +12,11 @@ Demonstration Video showing project "VcxprojToShellcodeCompiler" (the core part)
 
 Additional tool part: ShellcodeTestLoader.x86 -- The "ShellcodeTestLoader" has another copy of sln that should be built using Visual Studio 2008 Express with SP1 since windows 2000 compatibility is considered. VS2008 is the last version supporting Windows 2000. Although it's also the first or second version supporting x64, the free "Visual Studio 2008 Express" version did not have a built-in x64 compiler (but not a problem since Windows 2000 did not have x64 version). The compiled ShellcodeTestLoader could be used to load & test x86 shellcode from Windows 2000 to Windows 11 platforms.
 
-PoC part 1: Poc_Reconnaissance -- The "ReconCommand" is the C2 that Received SysInfo (Including Icon Images) Sent from Targets, Please Use "VcxprojToShellcodeCompiler" to Compile "ReconAgent" as Both x86/x64 Versions of Shellcode (Remember to Modify the C2 Host Name in Source Code) & Test How It Worked.
+PoC Part 0: GetSysInfo, as Part of MsShellcodeDev Soluion - ShellcodeSample.vcxproj.
 
-PoC part 2: Poc_Licensing@USB -- Under Developing... Using HMAC_SHA512 & iSN of USB Thumbdrive
+PoC Part 1: Poc_Reconnaissance -- The "ReconCommand" is the C2 that Received SysInfo (Including Icon Images) Sent from Targets, Please Use "VcxprojToShellcodeCompiler" to Compile "ReconAgent" as Both x86/x64 Versions of Shellcode (Remember to Modify the C2 Host Name in Source Code) & Test How It Worked.
+
+PoC Part 2: Poc_Licensing@USB -- Under Developing... Using HMAC_SHA512 & iSN of USB Thumbdrive
 
 P.S. For C2 in PoC, Remember to Set Firewall Rules for C2 Host ...
 
