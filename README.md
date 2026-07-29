@@ -12,6 +12,9 @@ Demonstration Video showing project "VcxprojToShellcodeCompiler" (the core part)
 
 Additional tool part 1: ShellcodeTestLoader -- To provide both x86 & x64 shellcode loader exe compatible with Windows XP platform, v140xp or v141xp toolsets (though deprecated) should be installed in addtion to the C Desktop Development Core Components. If using Visual Studio 2017, 2019 & 2022, please keep that in mind; if using Visual Studio 2013 & 2015, both IDEs are already XP compatible.
 
+Demonstration Video showing project "ShellcodeTestLoader" built using Visual Studio 2022
+[![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/ShellcodeTestLoader.x86-Built.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/ShellcodeTestLoader.x86-Built@VS2008Express.mp4)
+
 Additional tool part 2: ShellcodeTestLoader.x86 -- The "ShellcodeTestLoader" has another copy of sln that should be built using Visual Studio 2008 Express with SP1 since windows 2000 compatibility is considered. VS2008 is the last version supporting Windows 2000. Although it's also the first or second version supporting x64, the free "Visual Studio 2008 Express" version did not have a built-in x64 compiler (but not a problem since Windows 2000 did not have x64 version). The compiled ShellcodeTestLoader could be used to load & test x86 shellcode from Windows 2000 to Windows 11 platforms.
 
 Demonstration Video showing project "ShellcodeTestLoader.x86" built using Visual Studio 2008 Express<br />
