@@ -2,26 +2,30 @@
 The toolset that could help turning C programmers to Shellcode developers.
 
 # Requirements - To Build the Solution
-Main part: MsShellcodeDev -- Visual Studio 2026 (all versions) is the recommended IDE to compile the solution, however, as sln provided, using Visual Studio 2013, 2015, 2017, 2019 & 2022 to build this project is possible, just remember to modify some important settings such as platform toolset and others. Hardware & software requirements are the same as used Visual Studio Version. (For those want to develop offline under a not-so-fat IDE, Visual Studio 2015 might be your best choice.) 
-For allowing ShellcodeTestLoader to be executed on Windows XP x86/x64 version, v140xp or v141xp toolsets (though deprecated) should be installed in addtion to the C Desktop Development Core Components if using Visual Studio 2017 or newer version.
+Main part: MsShellcodeDev -- Visual Studio 2026 is the recommended IDE to compile the solution, however, as sln provided, techinically using Visual Studio 2013, 2015, 2017, 2019 & 2022 to build this project is possible, just remember to modify some important settings such as platform toolset and others. Hardware & software requirements are the same as used Visual Studio Version. (For those want to develop offline under a not-so-fat IDE, Visual Studio 2015 might be your best choice.)
+As v140xp and v141xp removed from Visual Studio 2026, project "ShellcodeTestLoader" is no more a part of the main solution.
 
 (For Demonstration Video: Click on the Image & Download the MP4 to play)
 
 Demonstration Video showing project "VcxprojToShellcodeCompiler" (the core part) & "ShellcodeTestLoader" (the tester) of MsShellcodeDev built using Visual Studio 2026<br />
 [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/MsShellcodeDev-Built.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/MsShellcodeDev-Built@VS2026.mp4)
 
-Additional tool part: ShellcodeTestLoader.x86 -- The "ShellcodeTestLoader" has another copy of sln that should be built using Visual Studio 2008 Express with SP1 since windows 2000 compatibility is considered. VS2008 is the last version supporting Windows 2000. Although it's also the first or second version supporting x64, the free "Visual Studio 2008 Express" version did not have a built-in x64 compiler (but not a problem since Windows 2000 did not have x64 version). The compiled ShellcodeTestLoader could be used to load & test x86 shellcode from Windows 2000 to Windows 11 platforms.
+Additional tool part 1: ShellcodeTestLoader -- To provide both x86 & x64 shellcode loader exe compatible with Windows XP platform, v140xp or v141xp toolsets (though deprecated) should be installed in addtion to the C Desktop Development Core Components. If using Visual Studio 2017, 2019 & 2022, please keep that in mind; if using Visual Studio 2013 & 2015, both IDEs are already XP compatible.
+
+Additional tool part 2: ShellcodeTestLoader.x86 -- The "ShellcodeTestLoader" has another copy of sln that should be built using Visual Studio 2008 Express with SP1 since windows 2000 compatibility is considered. VS2008 is the last version supporting Windows 2000. Although it's also the first or second version supporting x64, the free "Visual Studio 2008 Express" version did not have a built-in x64 compiler (but not a problem since Windows 2000 did not have x64 version). The compiled ShellcodeTestLoader could be used to load & test x86 shellcode from Windows 2000 to Windows 11 platforms.
+
+Demonstration Video showing project "ShellcodeTestLoader.x86" built using Visual Studio 2008 Express<br />
+[![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/ShellcodeTestLoader.x86-Built.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/ShellcodeTestLoader.x86-Built@VS2008Express.mp4)
 
 PoC Part 0: GetSysInfo, as Part of MsShellcodeDev Soluion - ShellcodeSample.vcxproj.
 
 PoC Part 1: Poc_Reconnaissance -- The "ReconCommand" is the C2 that Received SysInfo (Including Icon Images) Sent from Targets, Please Use "VcxprojToShellcodeCompiler" to Compile "ReconAgent" as Both x86/x64 Versions of Shellcode (Remember to Modify the C2 Host Name in Source Code) & Test How It Worked.
 
-PoC Part 2: Poc_Licensing@USB -- Under Developing... Using HMAC_SHA512 & iSN of USB Thumbdrive
+PoC Part 2: Poc_Licensing@USB -- Shellcode could also be used for non-malicious purpose, and this is one example. In Poc_Licensing@USB, "GenerateLicenseAtUSB" could generate file "License.ini" and save it in the root directory of the selected thumb drive. The key in the License file is generated using HMAC_SHA512 (Key length=128 bytes, 2nd half is generated using SHA512 output of iSerialNumber of "that" thumb drive) and Username given in the same license file. Use generated "CheckLicense" shellcose could test if the license valid. Since iSerialNumber is the key factor, the License.ini generated & tested valid on thumb drive 1 will not be valid if just copied to thumb drive 2.
+
+All demonstartion videos of PoCs are given in the end of thiss document.
 
 P.S. For C2 in PoC, Remember to Set Firewall Rules for C2 Host ...
-
-Demonstration Video showing project "ShellcodeTestLoader.x86" built using Visual Studio 2008 Express<br />
-[![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/ShellcodeTestLoader.x86-Built.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/ShellcodeTestLoader.x86-Built@VS2008Express.mp4)
 
 # Requirements - To Build the Shellcode
 To execute "Vcxproj to Shellcode Compiler" to convert & compile the vcxproj to shellcode, Windows 7 & Visual Studio 2013 (or higher version OSes/IDEs) are required, so the Software/Hardwre requirements just same as Win 7 & VS 2013. The converted project should be developed using pure C & win32/win64 APIs without class & global variable definitions.
