@@ -72,6 +72,6 @@ Comments of codes not provide in most cpp/h files, would be added to help people
 3. Building PoC_Reconnaissance, Compiling ReconAgent as Shellcode & Executing It on Windows XP, Windows 7, Windows 10 CMGE, Windows 11 26H1 zhTW & Windows 11 26H1 enUS, With Different Office Version & PDF Viewer Installed<br />
    [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/ReconAgents2ReconCommand.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/ReconAgents2ReconCommand.mp4)
 4. Building PoC_Licensing@USB, Compiling CheckLicense as Shellcode & Executing It on Windows 11 26H1 enUS, With Same License.ini File on Different USB Thumbdrive<br />
-   Under Developing
+   [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/CheckLicense@USB.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/CheckLicense@USB.mp4)
 5. Popup MessageBox (Screenshot Only) Displayed Afetr Executing GetSysInfo Shellcode File on Windows 11 Pro on Arm64<br />
    ![image](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/SysInfo.Win11.Arm64.Pro.png) Wait for Update
