@@ -20,18 +20,6 @@ Additional tool part 2: ShellcodeTestLoader.x86 -- The "ShellcodeTestLoader" has
 Demonstration Video showing project "ShellcodeTestLoader.x86" built using Visual Studio 2008 Express<br />
 [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/ShellcodeTestLoader.x86-Built.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/ShellcodeTestLoader.x86-Built@VS2008Express.mp4)
 
-PoC Part 0: The start of this project -- My patched poison ivy RAT executed on windows 11 & C2 on Windows Server 2025.
-
-PoC Part 1: GetSysInfo, as Part of MsShellcodeDev Soluion - ShellcodeSample.vcxproj.
-
-PoC Part 2: Poc_Reconnaissance -- The "ReconCommand" is the C2 that received SysInfo (including icon images) sent from targets, Please use "VcxprojToShellcodeCompiler" to compile "ReconAgent" as both x86/x64 versions of shellcode (Remember to modify the C2 host name in source code). If "ReconCommand.ini" not provided or "ListenPort" not set, the default is 8080.
-
-PoC Part 3: Poc_Licensing@USB -- Shellcode could also be used for non-malicious purpose, and this is one example. In Poc_Licensing@USB, "GenerateLicenseAtUSB" could generate file "License.ini" and save it in the root directory of the selected thumb drive. The key in the License file is generated using HMAC_SHA512 (Key length=128 bytes, 2nd half is generated using SHA512 output of iSerialNumber of "that" thumb drive) and Username given in the same license file. Use generated "CheckLicense" shellcose could test if the license valid. Since iSerialNumber is the key factor, the License.ini generated & tested valid on thumb drive 1 will not be valid if just copied to thumb drive 2.
-
-All demonstartion videos of PoCs are given in the end of thiss document.
-
-P.S. For C2 in PoC, Remember to Set Firewall Rules for C2 Host ...
-
 # Requirements - To Build the Shellcode
 To execute "Vcxproj to Shellcode Compiler" to convert & compile the vcxproj to shellcode, Windows 7 & Visual Studio 2013 (or higher version OSes/IDEs) are required, so the Software/Hardwre requirements just same as Win 7 & VS 2013. The converted project should be developed using pure C & win32/win64 APIs without class & global variable definitions.
 
@@ -63,8 +51,16 @@ For the project to be converted & compiled, developers could type the codes & de
 2. Supporting Getting API by Ordinal: Some undocumented APIs were provided very early (NT 5.0 or even 4.0) but in older version of DLLs, exported by ordinal (Those ordinals are unchanged bacause of backward compatibility). If want to develop the shellcode compitible for all NT-based platform, try to find those APIs & use them well (You could Google "Geoff Chappel" for the references he provided)
 3. Supporting API Forwarding: Using "dumpbin /exports" on DLLs of different versions of Windows, API forwarding could be easily found on many legacy API/DLL pairs. For those using import table in EXE or using "GetProcAddress" API to get function address, that's not a problem; for those enumerating export table from DLLs to find function name hash that match given value to get API address, it will cause error. MsShellcodeDev could detect if API forwarding happened in loaded DLL and get the real function address from the forwarded DLL. (FYI, even in kernel32.dll & user32.dll, those frequently used dll, API forwarding was implemented on Windows 11 25H2, & I'm not trying other versions) Using "ShellcodeSample" of "MsShellcodeDev," since the source code included APIs from netapi32.dll that forwarded to other DLLs & APIs from shlwapi.dll that exported using ordinals, Feature 2 & 3 could be tested using one sample.
 
-# Additional Info
-Comments of codes not provide in most cpp/h files, would be added to help people get the ideas of how this solution works.
+# PoC Provided
+PoC Part 0: The start of this project -- My patched poison ivy RAT executed on windows 11 & C2 on Windows Server 2025.
+
+PoC Part 1: GetSysInfo, as Part of MsShellcodeDev Soluion - ShellcodeSample.vcxproj.
+
+PoC Part 2: Poc_Reconnaissance -- The "ReconCommand" is the C2 that received SysInfo (including icon images) sent from targets, Please use "VcxprojToShellcodeCompiler" to compile "ReconAgent" as both x86/x64 versions of shellcode (Remember to modify the C2 host name in source code). If "ReconCommand.ini" not provided or "ListenPort" not set, the default is 8080.
+
+PoC Part 3: Poc_Licensing@USB -- Shellcode could also be used for non-malicious purpose, and this is one example. In Poc_Licensing@USB, "GenerateLicenseAtUSB" could generate file "License.ini" and save it in the root directory of the selected thumb drive. The key in the License file is generated using HMAC_SHA512 (Key length=128 bytes, 2nd half is generated using SHA512 output of iSerialNumber of "that" thumb drive) and Username given in the same license file. Use generated "CheckLicense" shellcose could test if the license valid. Since iSerialNumber is the key factor, the License.ini generated & tested valid on thumb drive 1 will not be valid if just copied to thumb drive 2.
+
+P.S. For C2 in PoC, Remember to Set Firewall Rules for C2 Host ...
 
 # List of Demonstration MP4 Files
 1. Executing Patched Poison Ivy 2.3.2 Shellcode on Windows 11 26H1, C2 Listening on Port 3460 at Windows Server 2025 Standard Version, Just to Mention How MsShellcodeDev Emerged as an Open Source Project (From What I Learned in Patching Poison Ivy RAT)<br />
