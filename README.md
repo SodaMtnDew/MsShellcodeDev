@@ -20,11 +20,13 @@ Additional tool part 2: ShellcodeTestLoader.x86 -- The "ShellcodeTestLoader" has
 Demonstration Video showing project "ShellcodeTestLoader.x86" built using Visual Studio 2008 Express<br />
 [![Watch the video](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/images/ShellcodeTestLoader.x86-Built.png)](https://github.com/SodaMtnDew/MsShellcodeDev/blob/main/videos/ShellcodeTestLoader.x86-Built@VS2008Express.mp4)
 
-PoC Part 0: GetSysInfo, as Part of MsShellcodeDev Soluion - ShellcodeSample.vcxproj.
+PoC Part 0: The start of this project -- My patched poison ivy RAT executed on windows 11 & C2 on Windows Server 2025.
 
-PoC Part 1: Poc_Reconnaissance -- The "ReconCommand" is the C2 that Received SysInfo (Including Icon Images) Sent from Targets, Please Use "VcxprojToShellcodeCompiler" to Compile "ReconAgent" as Both x86/x64 Versions of Shellcode (Remember to Modify the C2 Host Name in Source Code) & Test How It Worked.
+PoC Part 1: GetSysInfo, as Part of MsShellcodeDev Soluion - ShellcodeSample.vcxproj.
 
-PoC Part 2: Poc_Licensing@USB -- Shellcode could also be used for non-malicious purpose, and this is one example. In Poc_Licensing@USB, "GenerateLicenseAtUSB" could generate file "License.ini" and save it in the root directory of the selected thumb drive. The key in the License file is generated using HMAC_SHA512 (Key length=128 bytes, 2nd half is generated using SHA512 output of iSerialNumber of "that" thumb drive) and Username given in the same license file. Use generated "CheckLicense" shellcose could test if the license valid. Since iSerialNumber is the key factor, the License.ini generated & tested valid on thumb drive 1 will not be valid if just copied to thumb drive 2.
+PoC Part 2: Poc_Reconnaissance -- The "ReconCommand" is the C2 that received SysInfo (including icon images) sent from targets, Please use "VcxprojToShellcodeCompiler" to compile "ReconAgent" as both x86/x64 versions of shellcode (Remember to modify the C2 host name in source code). If "ReconCommand.ini" not provided or "ListenPort" not set, the default is 8080.
+
+PoC Part 3: Poc_Licensing@USB -- Shellcode could also be used for non-malicious purpose, and this is one example. In Poc_Licensing@USB, "GenerateLicenseAtUSB" could generate file "License.ini" and save it in the root directory of the selected thumb drive. The key in the License file is generated using HMAC_SHA512 (Key length=128 bytes, 2nd half is generated using SHA512 output of iSerialNumber of "that" thumb drive) and Username given in the same license file. Use generated "CheckLicense" shellcose could test if the license valid. Since iSerialNumber is the key factor, the License.ini generated & tested valid on thumb drive 1 will not be valid if just copied to thumb drive 2.
 
 All demonstartion videos of PoCs are given in the end of thiss document.
 
